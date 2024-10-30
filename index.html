@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consultas - Estudio Jurídico</title>
+    <!-- Enlace a Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Estilos generales */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e9ecef;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0;
+            padding-top: 56px;
+            /* Ajusta el espacio para la navbar fija */
+        }
+
+        /* Estilos para la navbar */
+        .navbar {
+            background-color: #343a40;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        .navbar-brand {
+            color: #ffffff !important;
+            font-weight: bold;
+            margin: auto;
+            text-align: center;
+        }
+
+        /* Estilos para el formulario */
+        .form-container {
+            background-color: lightgrey;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            padding: 30px;
+            max-width: 500px;
+            width: 100%;
+            margin-top: 50px;
+        }
+
+        h2 {
+            color: #0e1f31;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-weight: bold;
+            color: #555;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            background-color: #f1f3f5;
+            border: 1px solid #ced4da;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        textarea:focus {
+            border-color: #0056b3;
+            box-shadow: 0 0 5px rgba(0, 86, 179, 0.5);
+        }
+
+        .btn-custom {
+            background-color: #1f5da0bd;
+            color: white;
+        }
+
+        button {
+            color: white;
+            font-weight: bold;
+            border: none;
+            border-radius: 5px;
+            padding: 10px;
+            width: 100%;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background-color: #1c5491bd;
+            color: white !important;
+        }
+
+        /* Estilos para el footer */
+        footer {
+            background-color: #343a40;
+            color: white;
+            text-align: center;
+            padding: 15px 0;
+            width: 100%;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <a class="navbar-brand mx-auto" href="#">Estudio Jurídico</a>
+    </nav>
+
+    <div class="form-container">
+        <h2>Formulario de consultas</h2>
+        <form id="consultaForm">
+            <div class="form-group">
+                <label for="nombre">Nombre:</label>
+                <input type="text" class="form-control" id="nombre" placeholder="Ingrese su nombre" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Correo electrónico:</label>
+                <input type="email" class="form-control" id="email" placeholder="Ingrese su correo" required>
+            </div>
+            <div class="form-group">
+                <label for="mensaje">Mensaje:</label>
+                <textarea class="form-control" id="mensaje" rows="4" placeholder="Escriba su consulta"
+                    required></textarea>
+            </div>
+            <button type="submit" class="btn btn-custom">Enviar Consulta</button>
+        </form>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Estudio Jurídico - Todos los derechos reservados</p>
+    </footer>
+
+    <!-- Script JavaScript -->
+    <script>
+
+        document.getElementById('consultaForm').addEventListener('submit', function (event) {
+            event.preventDefault(); 
+
+            const nombre = document.getElementById('nombre').value;
+            alert(`Gracias por tu consulta, ${nombre}. \n Nos pondremos en contacto contigo pronto.`);
+        });
+    </script>
+</body>
+
+</html>
